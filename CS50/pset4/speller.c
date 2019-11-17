@@ -1,3 +1,5 @@
+// USED SOLUTION!!!
+
 // Implements a spell-checker
 
 #include <ctype.h>
