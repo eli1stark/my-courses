@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      {% for row in table: %}
+        {% set symbol = row["symbol"] %}
+        {% set shares = row["shares"] %}
+        {% set price = row["price"] %}
+        {% set total = row["total"] %}
+        {% set time = row["time"] %}
+
+        <tr>
+            <td>{{ symbol }}</td>
+            <td>{{ shares }}</td>
+            <td>{{ price | usd() }}</td>
+            <td>{{ total | usd() }}</td>
+            <td>{{ time }}</td>
+        </tr>
+      {% endfor %}
+
+  </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Store
+{% endblock %}
+
+{% block main %}
+
+<h1 style="color: green">Fund Account:</h1>
+    <form action="/store" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" min="1" name="amount" placeholder="How much?" type="number">
+        </div>
+        <button class="btn btn-success" type="submit">Fund</button>
+    </form>
+
+{% endblock %}
