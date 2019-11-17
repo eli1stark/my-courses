@@ -1,0 +1,47 @@
+TO DO: (by Zamayla)
+1) open file                                       +
+2) update outfile`s header info                    +
++ make correct input                               +
+3) read infile`s scanline, pixel by pixel
+4) resize horizontally
+for each row
+    for each pixel in row
+        write to outfile n times
+    write outfile`s padding
+    skip over infile`s padding
+
+5) remember padding!
+6) resize vertically (2 variants)
+"rewrite" methods
+    a) remember pixels in array
+    b) write array as many times as needed
+
+for each row
+    for each pixel
+        write to array n times
+    for n times
+        write array to outfile
+        write outfile padding
+    skip over infile padding
+
+
+or
+
+"re-copy"methods
+    a) go back to the start of the original scanline
+    b) re-scale scanline
+
+for each row
+    for n-1 times
+        write pixels, padding to outfile
+        send infile cursor back
+    write pixels, padding to outfile
+    skip over infile padding
+
+
+
+What copy.c do:
+1) opens a file
+2) updates header info for outfile
+3) reads each scanline, pixel by pixel
+4) writes each pixel into the output file`s scanline
