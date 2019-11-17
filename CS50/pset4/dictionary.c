@@ -1,3 +1,5 @@
+// USED SOLUTION!!!
+
 // Implements a dictionary's functionality
 
 #include <stdbool.h>
