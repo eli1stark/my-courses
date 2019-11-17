@@ -1,3 +1,5 @@
+// USED SOLUTION!!!
+
 // Copies a BMP file
 
 #include <stdio.h>
