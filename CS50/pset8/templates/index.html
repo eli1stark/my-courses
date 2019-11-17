@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <!-- go through all table -->
+      {% for row in table: %}
+        <!-- get value from row -->
+        {% set symbol = row["symbol"] %}
+        {% set name = row["name"] %}
+        {% set shares = row["shares"] %}
+
+        <!-- get current price -->
+        {% set check_symbol = symbol | lookup() %}
+        {% set price = check_symbol["price"] %}
+
+        <!-- get total price -->
+        {% set total = price * shares %}
+
+        <tr>
+            <td>{{ symbol }}</td>
+            <td>{{ name }}</td>
+            <td>{{ shares }}</td>
+            <td>{{ price | usd() }}</td>
+            <td>{{ total | usd()  }}</td>
+        </tr>
+      {% endfor %}
+
+      <tr>
+          <td>CASH</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ user_cash | usd() }}</td>
+      </tr>
+
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>TOTAL:</b></td>
+          <td><b>{{ global_total | usd() }}</b></td>
+      </tr>
+  </tbody>
+
+</table>
+
+{% endblock %}
