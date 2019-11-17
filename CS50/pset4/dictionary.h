@@ -1,3 +1,5 @@
+//USED SOLUTION!!!
+
 // Declares a dictionary's functionality
 
 #ifndef DICTIONARY_H
