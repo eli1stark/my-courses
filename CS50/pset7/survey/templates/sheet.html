@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h1 class="mb-3">Sheet</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">House</th>
+      <th scope="col">Position</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for i in range(lines): %}
+        <tr>
+            <th scope="row">{{ i + 1 }}</th>
+            {% set counter = i + i + i %}
+            <td>{{ data[counter] }}</td>
+            {% set counter = counter + 1 %}
+            <td>{{ data[counter] }}</td>
+            {% set counter = counter + 1 %}
+            <td>{{ data[counter] }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+{% endblock %}

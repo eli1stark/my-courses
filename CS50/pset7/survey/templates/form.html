@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+
+<div class="row">
+    <form action="/form" method="POST" class="needs-validation" novalidate>
+
+        <div class="col">
+            <label for="text"></label>
+            <input type="text" class="form-control form-control-lg" name="name" placeholder="Name" required>
+
+            <div class="valid-feedback">
+            Looks good!
+            </div>
+
+            <div class="invalid-feedback">
+            Please choose a name.
+            </div>
+        <div/><br>
+
+        <div class="col-sm-7 my-1" style="text-indent: -15px">
+            <select name="house" class="custom-select custom-select-lg" required>
+                <option value="" selected>House</option>
+                <option value="Adams">Adams</option>
+                <option value="Kirkland">Kirkland</option>
+                <option value="Cabot">Cabot</option>
+                <option value="Currier">Currier</option>
+                <option value="Mather">Mather</option>
+                <option value="Quincy">Quincy</option>
+                <option value="Pfoho">Pfoho</option>
+                <option value="Lowell">Lowell</option>
+                <option value="Winthrop">Winthrop</option>
+                <option value="Leverett">Leverett</option>
+                <option value="Dunster">Dunster</option>
+                <option value="Eliot">Eliot</option>
+            </select>
+
+            <div class="valid-feedback">
+            Looks good!
+            </div>
+
+            <div class="invalid-feedback">
+                Please provide a House
+            </div>
+
+        </div><br>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" name="position" value="Beater" id="Beater" class="custom-control-input" required>
+            <label class="custom-control-label" for="Beater">Beater</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" name="position" value="Chaser" id="Chaser" class="custom-control-input" required>
+            <label class="custom-control-label" for="Chaser">Chaser</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" name="position" value="Keeper" id="Keeper" class="custom-control-input" required>
+            <label class="custom-control-label" for="Keeper">Keeper</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" name="position" value="Seeker" id="Seeker" class="custom-control-input" required>
+            <label class="custom-control-label" for="Seeker">Seeker</label><br><br>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+{% endblock %}
