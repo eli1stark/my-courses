@@ -1,4 +1,4 @@
-//USED SOLUTION!!!
+// USED SOLUTION!!!
 
 // Declares a dictionary's functionality
 
